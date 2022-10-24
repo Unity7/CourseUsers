@@ -8,12 +8,18 @@ const AddUser = (props) => {
   const [enteredAge, setEnteredAge] = useState("");
   const addUserHandler = (e) => {
     e.preventDefault();
+
+    //validation
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       return;
     }
     if (+enteredAge < 1) {
       return;
     }
+
+    props.onAddUser(enteredUsername, enteredAge);
+
+    //clear inputs after submit
     setEnteredUsername("");
     setEnteredAge("");
   };
