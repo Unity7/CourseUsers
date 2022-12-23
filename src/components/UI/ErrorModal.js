@@ -30,6 +30,7 @@ const ModalOverlay = (props) => {
   );
 };
 
+//using portal to re-route the HTML elements to another root
 const ErrorModal = (props) => {
   return (
     <React.Fragment>
